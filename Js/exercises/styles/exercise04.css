@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 100px 100px 100px 100px;
+    background-color: #FF740D;
+}
+
+h1 {
+    padding: 10px;
+    text-align: center;
+}
+
+.continer {
+    background-color: #FFBD0D;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+ul {
+    padding: 0;
+}
+
+ul li {
+    color: #fff;
+}
+
+.flex-continer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    background-color: #FFBD0D;
+    gap: 5px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+p {
+    background-color: #FFBD0D;
+    padding: 10px 10px 10px 10px;
+    font-size: 500;
+}
+
+strong {
+    background-color: #FFBD0D;
+    padding: 0;
+}

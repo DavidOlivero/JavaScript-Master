@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aprendiendo jQuery V</title>
+    <script src="../Js/jQuery/jquery-3.6.3.min.js"></script>
+    <script src="../Js/05-ajax.js"></script>
+    <link rel="stylesheet" href="../Styles/ajax.css">
+</head>
+<body>
+    <h1>Aprendiendo jQuery - Peticiones Ajax</h1>
+
+    <div id="data"></div>
+
+    <form action="https://reqres.in/api/users" method="post">
+        <div>
+            <label for="first-name">Ingrese nombre de usuario</label>
+            <input type="text" name="first-name" id="first-name" size="30px" minlength="2" maxlength="80" required>
+        </div>
+
+        <div>
+            <label for="last-name">Ingrese su apellido</label>
+            <input type="text" name="last-name" id="last-name" size="30px" minlength="2" maxlength="100" required>
+        </div>
+
+        <div>
+            <label for="web-site">Ingrese su sitio web <span>(Opcional)</span></label>
+            <input type="text" name="web-site", id="web-site">
+        </div>
+
+        <div>
+            <input type="submit" value="Crear usuario">
+        </div>
+    </form>
+</body>
+</html>

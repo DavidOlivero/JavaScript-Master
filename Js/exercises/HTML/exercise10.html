@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+    <script src="../exercise10.js"></script>
+</head>
+<body>
+    <div>
+        <h2>Formulario</h2>
+
+        </div>
+        <form action="#" id="form" onsubmit="return false">
+            <div class="name">
+                <label for="name">Nombre</label>
+                <input type="text" name="name" id="name" size="30" minlength="2" maxlength="64" required>
+            </div>
+
+            <div class="surnames">
+                <label for="surnames">Apellidos</label>
+                <input type="text" name="surnames" id="surnames" size="30" minlength="2" maxlength="80" required>
+            </div>
+
+            <div class="years-old">
+                <label for="years-old">Edad</label>
+                <input type="number" name="years-old" id="years-old" required>
+            </div>
+
+            <div>
+                <input type="submit" value="Enviar" id="send-button">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

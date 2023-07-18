@@ -1,0 +1,7 @@
+.border {
+   border: 3px dashed #000
+}
+
+.highlighted {
+   background-color: yellow;
+}
