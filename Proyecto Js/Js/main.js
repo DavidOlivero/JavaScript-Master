@@ -1,3 +1,7 @@
 'use strict'
 
-alert('Todo bién')
+window.addEventListener("load", () => {
+    let $ = element => document.querySelector(element)
+    
+    console.log($("footer"))
+})
