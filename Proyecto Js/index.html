@@ -3,6 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Proyecto de JavaScript</title>
+    
+    <!-- CDN para cargar bxslider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+    <!-- CDN momentjs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/locale/es.min.js"></script>
+
     <script src="./Js/main.js"></script>
     <link rel="stylesheet" href="./Styles/styles.css">
 </head>
@@ -36,208 +46,39 @@
         </header>
 
             <!-- Slider -->
-            <div id="slider"></div>
+            <div id="slider">
+                <div class="galery">
+                    <div><img src="img/hojas.jpg" title="Hojas verdes agrupadas"></div>
+                    <div><img src="img/cielo.jpg" title="Cielo azul y despejado"></div>
+                    <div><img src="img/rojo.jpg" title="Hojas rojas callendo en primavera"></div>
+                  </div>
+            </div>
 
-            <!-- Contenido -->
-            <section id="content">
-                <div id="posts">
-                    <article class="post">
-                        <div id="post-header">
-                            <div>
-                                <h2>Título del artículo</h2>
-                                <span>01/08/2023 Por David Olivero, Corozal Sucre, Colombia</span>
-                            </div>
-                            <button>92 Comentarios</button>
-                        </div>
-                        <div id="info">
-                            <p>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia recusandae molestias 
-                                veritatis numquam dolor impedit officiis, suscipit a reprehenderit, culpa laboriosam 
-                                voluptatum non corrupti aut aliquam mollitia iste. Facilis ex possimus suscipit ullam 
-                                earum laboriosam nihil nulla, neque, eos, molestias autem repellendus deleniti. Facere 
-                                libero consequatur, fugit vitae obcaecati, necessitatibus dolorum quasi quia aliquid 
-                                assumenda omnis odit culpa adipisci reprehenderit accusantium, fugiat iste mollitia. 
-                                Deleniti, alias voluptas? Illo fuga libero repudiandae nostrum. Harum ut quibusdam eaque 
-                                pariatur maiores. Et ipsa sequi quis, quod totam nostrum illum neque doloribus, ipsam natus 
-                                voluptatem consequuntur impedit corrupti possimus accusamus recusandae perferendis voluptate 
-                                nulla!
-                            </p>
-                        </div>
-                        <a href="">Leer más >></a>
-                    </article>
+        <!-- Contenido -->
+        <section id="content">
+            <div id="posts"></div>
+            <aside id="sidebar">
+                <h4>¿Quién soy?</h4>
+                <img src="./img/caracol.jpg" alt="Imágen de un caracol" width="255" height="255">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis nihil officia rem dolorum 
+                    consequuntur at tenetur culpa laboriosam veniam eius?
+                </p>
+                <h4>Identifícate</h4>
+                <form action="#">
+                    <label for="name">Ingresa tu nombre</label>
+                    <input type="text" name="name" placeholder="Pepe">
 
-                    <article class="post">
-                        <div id="post-header">
-                            <div>
-                                <h2>Título del artículo</h2>
-                                <span>01/08/2023 Por David Olivero, Corozal Sucre, Colombia</span>
-                            </div>
-                            <button>92 Comentarios</button>
-                        </div>
-                        <div id="info">
-                            <p>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia recusandae molestias 
-                                veritatis numquam dolor impedit officiis, suscipit a reprehenderit, culpa laboriosam 
-                                voluptatum non corrupti aut aliquam mollitia iste. Facilis ex possimus suscipit ullam 
-                                earum laboriosam nihil nulla, neque, eos, molestias autem repellendus deleniti. Facere 
-                                libero consequatur, fugit vitae obcaecati, necessitatibus dolorum quasi quia aliquid 
-                                assumenda omnis odit culpa adipisci reprehenderit accusantium, fugiat iste mollitia. 
-                                Deleniti, alias voluptas? Illo fuga libero repudiandae nostrum. Harum ut quibusdam eaque 
-                                pariatur maiores. Et ipsa sequi quis, quod totam nostrum illum neque doloribus, ipsam natus 
-                                voluptatem consequuntur impedit corrupti possimus accusamus recusandae perferendis voluptate 
-                                nulla!
-                            </p>
-                        </div>
-                        <a href="">Leer más >></a>
-                    </article>
+                    <label for="mail">Ingresa tu correo</label>
+                    <input type="email" name="email" placeholder="mail@example.com">
 
-                    <article class="post">
-                        <div id="post-header">
-                            <div>
-                                <h2>Título del artículo</h2>
-                                <span>01/08/2023 Por David Olivero, Corozal Sucre, Colombia</span>
-                            </div>
-                            <button>92 Comentarios</button>
-                        </div>
-                        <div id="info">
-                            <p>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia recusandae molestias 
-                                veritatis numquam dolor impedit officiis, suscipit a reprehenderit, culpa laboriosam 
-                                voluptatum non corrupti aut aliquam mollitia iste. Facilis ex possimus suscipit ullam 
-                                earum laboriosam nihil nulla, neque, eos, molestias autem repellendus deleniti. Facere 
-                                libero consequatur, fugit vitae obcaecati, necessitatibus dolorum quasi quia aliquid 
-                                assumenda omnis odit culpa adipisci reprehenderit accusantium, fugiat iste mollitia. 
-                                Deleniti, alias voluptas? Illo fuga libero repudiandae nostrum. Harum ut quibusdam eaque 
-                                pariatur maiores. Et ipsa sequi quis, quod totam nostrum illum neque doloribus, ipsam natus 
-                                voluptatem consequuntur impedit corrupti possimus accusamus recusandae perferendis voluptate 
-                                nulla!
-                            </p>
-                        </div>
-                        <a href="">Leer más >></a>
-                    </article>
+                    <label for="password">Ingresa tu correo</label>
+                    <input type="password" name="password">
 
-                    <article class="post">
-                        <div id="post-header">
-                            <div>
-                                <h2>Título del artículo</h2>
-                                <span>01/08/2023 Por David Olivero, Corozal Sucre, Colombia</span>
-                            </div>
-                            <button>92 Comentarios</button>
-                        </div>
-                        <div id="info">
-                            <p>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia recusandae molestias 
-                                veritatis numquam dolor impedit officiis, suscipit a reprehenderit, culpa laboriosam 
-                                voluptatum non corrupti aut aliquam mollitia iste. Facilis ex possimus suscipit ullam 
-                                earum laboriosam nihil nulla, neque, eos, molestias autem repellendus deleniti. Facere 
-                                libero consequatur, fugit vitae obcaecati, necessitatibus dolorum quasi quia aliquid 
-                                assumenda omnis odit culpa adipisci reprehenderit accusantium, fugiat iste mollitia. 
-                                Deleniti, alias voluptas? Illo fuga libero repudiandae nostrum. Harum ut quibusdam eaque 
-                                pariatur maiores. Et ipsa sequi quis, quod totam nostrum illum neque doloribus, ipsam natus 
-                                voluptatem consequuntur impedit corrupti possimus accusamus recusandae perferendis voluptate 
-                                nulla!
-                            </p>
-                        </div>
-                        <a href="">Leer más >></a>
-                    </article>
-
-                    <article class="post">
-                        <div id="post-header">
-                            <div>
-                                <h2>Título del artículo</h2>
-                                <span>01/08/2023 Por David Olivero, Corozal Sucre, Colombia</span>
-                            </div>
-                            <button>92 Comentarios</button>
-                        </div>
-                        <div id="info">
-                            <p>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia recusandae molestias 
-                                veritatis numquam dolor impedit officiis, suscipit a reprehenderit, culpa laboriosam 
-                                voluptatum non corrupti aut aliquam mollitia iste. Facilis ex possimus suscipit ullam 
-                                earum laboriosam nihil nulla, neque, eos, molestias autem repellendus deleniti. Facere 
-                                libero consequatur, fugit vitae obcaecati, necessitatibus dolorum quasi quia aliquid 
-                                assumenda omnis odit culpa adipisci reprehenderit accusantium, fugiat iste mollitia. 
-                                Deleniti, alias voluptas? Illo fuga libero repudiandae nostrum. Harum ut quibusdam eaque 
-                                pariatur maiores. Et ipsa sequi quis, quod totam nostrum illum neque doloribus, ipsam natus 
-                                voluptatem consequuntur impedit corrupti possimus accusamus recusandae perferendis voluptate 
-                                nulla!
-                            </p>
-                        </div>
-                        <a href="">Leer más >></a>
-                    </article>
-
-                    <article class="post">
-                        <div id="post-header">
-                            <div>
-                                <h2>Título del artículo</h2>
-                                <span>01/08/2023 Por David Olivero, Corozal Sucre, Colombia</span>
-                            </div>
-                            <button>92 Comentarios</button>
-                        </div>
-                        <div id="info">
-                            <p>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia recusandae molestias 
-                                veritatis numquam dolor impedit officiis, suscipit a reprehenderit, culpa laboriosam 
-                                voluptatum non corrupti aut aliquam mollitia iste. Facilis ex possimus suscipit ullam 
-                                earum laboriosam nihil nulla, neque, eos, molestias autem repellendus deleniti. Facere 
-                                libero consequatur, fugit vitae obcaecati, necessitatibus dolorum quasi quia aliquid 
-                                assumenda omnis odit culpa adipisci reprehenderit accusantium, fugiat iste mollitia. 
-                                Deleniti, alias voluptas? Illo fuga libero repudiandae nostrum. Harum ut quibusdam eaque 
-                                pariatur maiores. Et ipsa sequi quis, quod totam nostrum illum neque doloribus, ipsam natus 
-                                voluptatem consequuntur impedit corrupti possimus accusamus recusandae perferendis voluptate 
-                                nulla!
-                            </p>
-                        </div>
-                        <a href="">Leer más >></a>
-                    </article>
-
-                    <article class="post">
-                        <div id="post-header">
-                            <div>
-                                <h2>Título del artículo</h2>
-                                <span>01/08/2023 Por David Olivero, Corozal Sucre, Colombia</span>
-                            </div>
-                            <button>92 Comentarios</button>
-                        </div>
-                        <div id="info">
-                            <p>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia recusandae molestias 
-                                veritatis numquam dolor impedit officiis, suscipit a reprehenderit, culpa laboriosam 
-                                voluptatum non corrupti aut aliquam mollitia iste. Facilis ex possimus suscipit ullam 
-                                earum laboriosam nihil nulla, neque, eos, molestias autem repellendus deleniti. Facere 
-                                libero consequatur, fugit vitae obcaecati, necessitatibus dolorum quasi quia aliquid 
-                                assumenda omnis odit culpa adipisci reprehenderit accusantium, fugiat iste mollitia. 
-                                Deleniti, alias voluptas? Illo fuga libero repudiandae nostrum. Harum ut quibusdam eaque 
-                                pariatur maiores. Et ipsa sequi quis, quod totam nostrum illum neque doloribus, ipsam natus 
-                                voluptatem consequuntur impedit corrupti possimus accusamus recusandae perferendis voluptate 
-                                nulla!
-                            </p>
-                        </div>
-                        <a href="">Leer más >></a>
-                    </article>
-                </div>
-                <aside id="sidebar">
-                    <h4>¿Quién soy?</h4>
-                    <img src="./img/caracol.jpg" alt="Imágen de un caracol" width="255" height="255">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis nihil officia rem dolorum 
-                        consequuntur at tenetur culpa laboriosam veniam eius?
-                    </p>
-                    <h4>Identifícate</h4>
-                    <form action="#">
-                        <label for="name">Ingresa tu nombre</label>
-                        <input type="text" name="name" placeholder="Pepe">
-
-                        <label for="mail">Ingresa tu correo</label>
-                        <input type="email" name="email" placeholder="mail@example.com">
-
-                        <label for="password">Ingresa tu correo</label>
-                        <input type="password" name="password">
-
-                        <input type="submit" value="Entrar">
-                    </form>
-                </aside>
-            </section>
+                    <input type="submit" value="Entrar">
+                </form>
+            </aside>
+        </section>
     </section>
 
     <footer>
