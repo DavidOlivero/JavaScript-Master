@@ -1,0 +1,9 @@
+:root {
+    --primary-color: #034b01;
+    --secundary-color: #023500;
+}
+
+body {
+    background-image: url("../img/hojas.jpg");
+    background-attachment: fixed;
+}

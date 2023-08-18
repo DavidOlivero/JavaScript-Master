@@ -5,11 +5,6 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-body {
-    background-image: url("../img/hojas.jpg");
-    background-attachment: fixed;
-}
-
 #global {
     width: 60%;
     margin: 0 auto;
@@ -20,11 +15,36 @@ body {
     filter: drop-shadow(0 0 2em #181717);
 }
 
+#change-themes {
+    position: fixed;
+    left: 0;
+    top: 40%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 20px;
+    width: 50px;
+    height: 200px;
+    background-color: rgba(51, 51, 51, 0.70);
+    padding: 10px 10px 10px 0;
+}
+
+#change-themes button {
+    width: 100%;
+    height: 40px;
+    transition: 0.3s;
+}
+
+#change-themes button:hover {
+    width: 70px;
+}
+
 #logo {
     font-size: 25px;
     letter-spacing: 4px;
     line-height: 80px;
-    background-color: #034b01;
+    background-color: var(--primary-color);
     color: #fff;
     width: 385px;
     height: 80px;
@@ -45,7 +65,7 @@ body {
 }
 
 #menu li:hover {
-    background-color: #034b01;
+    background-color: var(--primary-color);
 }
 
 #menu li a {
@@ -81,14 +101,14 @@ body {
     font-size: 15px;
     font-weight: bold;
     color: #fff;
-    background-color: #034b01;
+    background-color: var(--primary-color);
     border: none;
     padding: 10px;
     transition: 0.5s;
 }
 
 #post-header button:hover {
-    background-color: #023500;
+    background-color: var(--secundary-color);
 }
 
 .post h2 {
@@ -123,7 +143,7 @@ body {
 .post a {
     display: block;
     margin-bottom: 40px;
-    background-color: #034b01;
+    background-color: var(--primary-color);
     width: 160px;
     height: 30px;
     text-align: center;
@@ -135,7 +155,7 @@ body {
 }
 
 .post a:hover {
-    background-color: #023500;
+    background-color: var(--secundary-color);
 }
 
 #sidebar {
@@ -197,7 +217,7 @@ input[type="submit"] {
     font-size: 15px;
     padding: 10px;
     width: 90px;
-    background-color: #034b01;
+    background-color: var(--primary-color);
     color: #fff;
     outline: none;
     border: 1px solid #fff;
@@ -206,11 +226,11 @@ input[type="submit"] {
 }
 
 input:not(input[type="submit"]):focus {
-    outline-color: #034b01;
+    outline-color: var(--primary-color);
 }
 
 input[type="submit"]:hover {
-    background-color: #023500;
+    background-color: var(--secundary-color);
 }
 
 footer {

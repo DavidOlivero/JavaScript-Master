@@ -130,6 +130,23 @@ const renderPosts = () => {
     });
 }
 
+const changeThemeFromSlider = () => {
+    const imgOption = $(".img-option")
+
+    imgOption.each(async function () {
+        const element = $(this)
+
+        let evaluate = await new Promise((resolve, _rejex) => {
+            setTimeout(() => resolve(element.css("display") === "block"), 650)
+        })
+
+        if (evaluate) {
+            const id = element.attr("id")
+            $("#theme").attr("href", `Styles/${id}.css`)
+        }
+    })
+}
+
 $(document).ready(() => {
     // Create the sider
     $('.galery').bxSlider({
@@ -137,6 +154,9 @@ $(document).ready(() => {
         captions: true,
         slideWidth: 1200,
     });
+
+    $(".bx-controls-direction a").click(changeThemeFromSlider)
+    $(".bx-pager-item a").click(() => changeThemeFromSlider)
 
     // Show posts
     renderPosts()

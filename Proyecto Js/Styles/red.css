@@ -1,0 +1,11 @@
+:root {
+    --primary-color: #eb2e0d;
+    --secundary-color: #b3240b;
+}
+
+body {
+    background-image: url("../img/rojo.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

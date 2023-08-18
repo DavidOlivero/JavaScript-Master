@@ -14,9 +14,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/locale/es.min.js"></script>
 
     <script src="./Js/main.js"></script>
+    <link rel="stylesheet" href="Styles/green.css" id="theme">
     <link rel="stylesheet" href="./Styles/styles.css">
 </head>
 <body>
+    <div id="change-themes">
+        <button id="to-green"></button>
+        <button id="to-blue"></button>
+        <button id="to-red"></button>
+    </div>
+
     <!-- Contenedor global -->
     <section id="global">
         <!-- Cabecera -->
@@ -48,9 +55,9 @@
             <!-- Slider -->
             <div id="slider">
                 <div class="galery">
-                    <div><img src="img/hojas.jpg" title="Hojas verdes agrupadas"></div>
-                    <div><img src="img/cielo.jpg" title="Cielo azul y despejado"></div>
-                    <div><img src="img/rojo.jpg" title="Hojas rojas callendo en primavera"></div>
+                    <div class="img-option" id="green"><img src="img/hojas.jpg" title="Hojas verdes agrupadas"></div>
+                    <div class="img-option" id="blue"><img src="img/cielo.jpg" title="Cielo azul y despejado"></div>
+                    <div class="img-option" id="red"><img src="img/rojo.jpg" title="Hojas rojas callendo en primavera"></div>
                   </div>
             </div>
 
