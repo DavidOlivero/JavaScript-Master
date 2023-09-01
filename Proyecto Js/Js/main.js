@@ -147,6 +147,10 @@ const changeThemeFromSlider = () => {
     })
 }
 
+const changeThemeFromButtons = (theme) => {
+    $("#theme").attr("href", `Styles/${theme}.css`)
+}
+
 $(document).ready(() => {
     // Create the sider
     $('.galery').bxSlider({
@@ -155,8 +159,14 @@ $(document).ready(() => {
         slideWidth: 1200,
     });
 
+    // Change theme with slider
     $(".bx-controls-direction a").click(changeThemeFromSlider)
-    $(".bx-pager-item a").click(() => changeThemeFromSlider)
+    $(document).on("click", ".bx-pager-item a", changeThemeFromSlider)
+
+    // Change theme with buttons
+    $("#to-green").click(() => changeThemeFromButtons("green"))
+    $("#to-blue").click(() => changeThemeFromButtons("blue"))
+    $("#to-red").click(() => changeThemeFromButtons("red"))
 
     // Show posts
     renderPosts()

@@ -34,6 +34,19 @@
     width: 100%;
     height: 40px;
     transition: 0.3s;
+    border: none;
+}
+
+#change-themes #to-green {
+    background-color: #0deb05;
+}
+
+#change-themes #to-blue {
+    background-color: #1b81d4;
+}
+
+#change-themes #to-red {
+    background-color: #df0d0d;
 }
 
 #change-themes button:hover {
