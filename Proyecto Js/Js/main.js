@@ -1,6 +1,8 @@
 'use strict'
 
 let posts = JSON.parse(localStorage.getItem("Posts")) || []
+let theme = localStorage.getItem("Theme") || ""
+
 if (posts.length === 0) {
     let defaultPost = [
         {
@@ -164,10 +166,29 @@ $(document).ready(() => {
     $(document).on("click", ".bx-pager-item a", changeThemeFromSlider)
 
     // Change theme with buttons
-    $("#to-green").click(() => changeThemeFromButtons("green"))
-    $("#to-blue").click(() => changeThemeFromButtons("blue"))
-    $("#to-red").click(() => changeThemeFromButtons("red"))
+    $("#to-green").click(() => {
+        changeThemeFromButtons("green")
+        localStorage.setItem("Theme", "green")
+    })
+
+    $("#to-blue").click(() => {
+        changeThemeFromButtons("blue")
+        localStorage.setItem("Theme", "blue")
+    })
+    $("#to-red").click(() => {
+        changeThemeFromButtons("red")
+        localStorage.setItem("Theme", "red")
+        console.log(localStorage.getItem("Theme"))
+    })
 
     // Show posts
     renderPosts()
+
+    // Set theme
+    if (!theme) {
+        localStorage.setItem("Theme", "green")
+        theme = localStorage.getItem("Theme")
+    }
+
+    changeThemeFromButtons(theme)
 })
