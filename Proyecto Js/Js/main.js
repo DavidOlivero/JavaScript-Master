@@ -190,5 +190,11 @@ $(document).ready(() => {
         theme = localStorage.getItem("Theme")
     }
 
+    $("#to-up").click(() => {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 500)
+    })
+
     changeThemeFromButtons(theme)
 })

@@ -246,6 +246,28 @@ input[type="submit"]:hover {
     background-color: var(--secundary-color);
 }
 
+#to-up {
+    position: fixed;
+    right: 0;
+    bottom: 20px;
+    margin: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    border: 1px solid #000;
+    background-color: var(--primary-color);
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    line-height: 45px;
+    transition: 0.5s;
+}
+
+#to-up:hover {
+    background-color: var(--secundary-color);
+}
+
 footer {
     color: #fff;
     height: 47px;
