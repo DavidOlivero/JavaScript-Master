@@ -191,7 +191,7 @@
 #sidebar h4::before {
     display: inline-block;
     content: "";
-    width: 26%;
+    width: 31%;
     height: 10px;
     background-color: #838383;
     margin-right: 10px;
@@ -200,7 +200,7 @@
 #sidebar h4::after {
     display: inline-block;
     content: "";
-    width: 27%;
+    width: 31%;
     height: 10px;
     background-color: #838383;
     margin-left: 10px;

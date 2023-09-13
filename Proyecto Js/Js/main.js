@@ -2,6 +2,17 @@
 
 let posts = JSON.parse(localStorage.getItem("Posts")) || []
 let theme = localStorage.getItem("Theme") || ""
+let credentials = JSON.parse(localStorage.getItem("Credentials")) || {}
+
+if (Object.keys(credentials).length === 0) {
+    credentials = {
+        name : "David",
+        email: "example@gmail.com",
+        password: "123456"
+    }
+    
+    localStorage.setItem("Credentials", JSON.stringify(credentials))
+}
 
 if (posts.length === 0) {
     let defaultPost = [
@@ -178,7 +189,6 @@ $(document).ready(() => {
     $("#to-red").click(() => {
         changeThemeFromButtons("red")
         localStorage.setItem("Theme", "red")
-        console.log(localStorage.getItem("Theme"))
     })
 
     // Show posts
@@ -194,6 +204,31 @@ $(document).ready(() => {
         $("html, body").animate({
             scrollTop: 0
         }, 500)
+    })
+
+    $("form").submit(function (e) {
+        e.preventDefault()
+        let sidebar = $("#sidebar")
+        
+        const data = Object.fromEntries(
+            new FormData(e.target)
+        )
+
+        $(this).children("input").not("input[type='submit']").each(function () {
+            $(this).val("")
+        })
+
+        let evaluate = false
+        for (const property in data) {
+            evaluate = data[property] === credentials[property]
+
+            if (!evaluate) break
+        }
+
+        if (evaluate) {
+            sidebar.children("h4, form").remove()
+            sidebar.append(`<h3>Bienvenido ${data.name}</h3>`)
+        }
     })
 
     changeThemeFromButtons(theme)
