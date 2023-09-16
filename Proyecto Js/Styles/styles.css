@@ -5,6 +5,11 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+@font-face {
+    font-family: 'DS-Digital';
+    src: url(../Font/ds_digital/DS-DIGI.TTF) format('truetype');
+}
+
 #global {
     width: 60%;
     margin: 0 auto;
@@ -270,6 +275,29 @@ input[type="submit"]:hover {
 
 #to-up:hover {
     background-color: var(--secundary-color);
+}
+
+#clock {
+    justify-self: center;
+}
+
+#clock div {
+    background-color: #2b2a2a;
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 10px solid #838383;
+    color: #fff;
+    filter: drop-shadow(5px 5px 10px #000);
+}
+
+#clock div h2 {
+    font-family: 'DS-Digital';
+    font-size: 50px;
 }
 
 footer {
