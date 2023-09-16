@@ -9,19 +9,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 
+    <!-- CDN momentjs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/locale/es.min.js"></script>
+
     <script src="Js/kit.fontawesome.com_f6a7558c90.js"></script>
 
-    <script src="./Js/jquery-ui-1.13.2.custom/jquery-ui-1.13.2.custom/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+
     <script src="./Js/main.js" type="module"></script>
-    <script src="./Js/aboutme.js"></script>
+    <script src="./Js/clock.js"></script>
     <script type="module" src="./Js/changeTheme.js"></script>
     <script type="module" src="./Js/themesManagement.js"></script>
     
-    <link rel="stylesheet" href="./Js/jquery-ui-1.13.2.custom/jquery-ui-1.13.2.custom/jquery-ui.min.css">
-    <link rel="stylesheet" href="./Js/jquery-ui-1.13.2.custom/jquery-ui-1.13.2.custom/jquery-ui.structure.min.css">
-    <link rel="stylesheet" href="./Js/jquery-ui-1.13.2.custom/jquery-ui-1.13.2.custom/jquery-ui.theme.min.css">
     <link rel="stylesheet" href="Styles/green.css" id="theme">
     <link rel="stylesheet" href="./Styles/styles.css">
+    <script src="./Js/contact.js" type="module"></script>    
 </head>
 <body>
     <div id="change-themes">
@@ -49,7 +52,7 @@
                         <a href="./aboutme.html">SOBRE MÍ</a>
                     </li>
                     <li>
-                        <a href="./contactme.html">CONTACTO</a>
+                        <a href="">CONTACTO</a>
                     </li>
                 </ul>
             </nav>
@@ -66,30 +69,27 @@
 
         <!-- Contenido -->
         <section id="content">
-            <section id="info">
-                <h2>Mi información</h2>
-                <div id="accordion">
-                    <h3>Quien soy</h3>
-                    <div>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus molestiae magni expedita sequi ducimus placeat eius pariatur mollitia nobis earum.
-                        </p>
-                    </div>
-    
-                    <h3>A qué me dedico</h3>
-                    <div>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus molestiae magni expedita sequi ducimus placeat eius pariatur mollitia nobis earum.
-                        </p>
-                    </div>
-    
-                    <h3>Cuáles son mis motivaciones</h3>
-                    <div>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus molestiae magni expedita sequi ducimus placeat eius pariatur mollitia nobis earum.
-                        </p>
-                    </div>
-                </div>
+            <section id="contact">
+                <form action="#" id="contactForm" data-toggle="validator" role="form">
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name" id="firstName" placeholder="Juan" data-validation="alphanumeric" required>
+
+                    <label for="surname">Apellidos</label>
+                    <input type="text" name="surname" id="surName" placeholder="Gonzales Peralta" data-validation="alphanumeric" required>
+
+                    <label for="sex">Sexo</label>
+                    <select name="sex" id="sexSelect" required>
+                        <option value="">Selecciona tu sexo</option>
+                        <option value="male">Masculino</option>
+                        <option value="female">Femenino</option>
+                    </select>
+
+                    <label for="birthdate">Fecha de Nacimiento</label>
+                    <input type="date" name="birthdate" id="birthDate" data-validation="date">
+
+                    <input type="submit" value="Enviar" id="submitButton">
+                </form>
+                
             </section>
 
             <aside id="sidebar">
