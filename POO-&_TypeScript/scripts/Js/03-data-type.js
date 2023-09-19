@@ -23,3 +23,9 @@ values = 34;
 console.log(values);
 let companyName = `Paradize ${Number(123)}`;
 console.log(companyName);
+// Variables ambits
+{
+    let localValue = 23;
+    var globalValue = 34;
+}
+console.log(globalValue); // Not console.log(lovalValue)

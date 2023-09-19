@@ -32,3 +32,11 @@ console.log(values)
 type alphanumerics = string | number
 let companyName: alphanumerics = `Paradize ${Number(123)}`
 console.log(companyName)
+
+// Variables ambits
+{
+    let localValue: number = 23
+    var globalValue: number = 34
+}
+
+console.log(globalValue) // Not console.log(lovalValue)
