@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Aprendiendo Angular';
+  public title: string
+  public showGame: boolean
+
+  constructor() {
+    this.title = 'Aprendiendo Angular'
+    this.showGame = true
+  }
+
+  public changeGameVisibility = (): void  => {
+    this.showGame ? this.showGame = false : this.showGame = true
+  }
 }

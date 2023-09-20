@@ -1,0 +1,17 @@
+.game {
+    background-color: #929090;
+    padding: 20px;
+    margin: 20px;
+    list-style: none;
+    width: 87%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+div {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%);
+}

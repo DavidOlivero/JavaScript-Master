@@ -1,14 +1,18 @@
-<h2>Listado de videojuegos</h2>
+<h2>Listado de videojuegos en la página {{ title }}</h2>
 
-<ul>
-    <li>Assassin's Creed</li>
-    <li>The Legend of Zelda</li>
-    <li>Grand Theft Auto V</li>
-    <li>FIFA 21</li>
-    <li>Call of Duty: Warzone</li>
-    <li>Minecraft</li>
-    <li>Red Dead Redemption 2</li>
-    <li>Fortnite</li>
-    <li>Super Mario Odyssey</li>
-    <li>God of War</li>
-</ul>
+<div>
+    <ul>
+        <li class="game">Assassin's Creed</li>
+        <li class="game">The Legend of Zelda</li>
+        <li class="game">Grand Theft Auto V</li>
+        <li class="game">FIFA 21</li>
+        <li class="game">Call of Duty: Warzone</li>
+        <li class="game">Minecraft</li>
+        <li class="game">Red Dead Redemption 2</li>
+        <li class="game">Fortnite</li>
+        <li class="game">Super Mario Odyssey</li>
+        <li class="game">God of War</li>
+    </ul>
+
+    <button (click)="changeTitle()">Cambiar el título</button>
+</div>

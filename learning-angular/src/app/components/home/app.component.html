@@ -1,1 +1,3 @@
 <h1>Bienvenido a {{ title }}</h1>
+<app-video-games *ngIf="showGame"></app-video-games>
+<button (click)="changeGameVisibility()">Mostrar u ocultar lista de juegos</button>
