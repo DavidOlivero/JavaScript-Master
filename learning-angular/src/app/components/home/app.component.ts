@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { settings } from "../../models/settings";
 
 @Component({
   selector: 'app-root',
@@ -7,10 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public title: string
+  public description: string
   public showGame: boolean
 
   constructor() {
-    this.title = 'Aprendiendo Angular'
+    this.title = settings.title[0]
+    this.description = settings.description[0]
     this.showGame = true
   }
 

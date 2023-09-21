@@ -1,18 +1,41 @@
 <h2>Listado de videojuegos en la página {{ title }}</h2>
+<h4>{{ description }}</h4>
 
-<div>
+<div class="continer">
     <ul>
-        <li class="game">Assassin's Creed</li>
-        <li class="game">The Legend of Zelda</li>
-        <li class="game">Grand Theft Auto V</li>
-        <li class="game">FIFA 21</li>
-        <li class="game">Call of Duty: Warzone</li>
-        <li class="game">Minecraft</li>
-        <li class="game">Red Dead Redemption 2</li>
-        <li class="game">Fortnite</li>
-        <li class="game">Super Mario Odyssey</li>
-        <li class="game">God of War</li>
+        <ng-container *ngFor="let game of videoGames">
+            <li class="game" [style.backgroundColor]="game.releaseYear >= 2017 ? 'green' : ''">
+                <h5 *ngIf="game.releaseYear >= 2017" style="background-color: transparent;">Actual</h5>
+                {{ game.title }}
+                <br>
+                <strong>Género: {{ game.genre }}</strong>
+                <br>
+                <strong>Año de lanzamiento: {{ game.releaseYear }}</strong>
+                <br>
+                <strong>Plataforma: {{ game.platform }}</strong>
+            </li>
+        </ng-container>
     </ul>
+
+    <h3 style="text-align: center; margin: 10px;">La plataforma preddominante es</h3>
+    <!--Shitch case-->
+    <div [ngSwitch]="dominatPlatform" style="text-align: center; margin: 10px;">
+        <p *ngSwitchCase="'PlayStation 5'">
+            PlayStation 5
+        </p>
+        <p *ngSwitchCase="'Nintendo Switch'">
+            Nintendo Switch
+        </p>
+        <p *ngSwitchCase="'Xbox One'">
+            Xbox One
+        </p>
+        <p *ngSwitchCase="'PC'">
+            La plataforma predominante es PC
+        </p>
+        <p *ngSwitchCase="'PlayStation 4'">
+            PlayStation 4
+        </p>
+    </div>
 
     <button (click)="changeTitle()">Cambiar el título</button>
 </div>
