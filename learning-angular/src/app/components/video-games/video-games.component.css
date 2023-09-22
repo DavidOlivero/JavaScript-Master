@@ -10,11 +10,47 @@
     border-radius: 10px;
 }
 
+#add-game {
+    position: relative;
+    left: 50%;
+    margin: 20px;
+    transform: translate(-50%);
+    text-align: center;
+}
+
+#add-game input {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    transition: 0.4s;
+} 
+
+#add-game input:not(input[type="submit"]) {
+    width: 150px;
+}
+
+#add-game input[type="submit"]:hover{
+    background-color: #6db42a;
+}
+
+
+.resalt:not(.pc-game) {
+    filter: drop-shadow(5px 5px 10px #575757);
+}
+
+.pc-game {
+    filter: drop-shadow(5px 5px 10px #21b62e);
+}
+
 ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: center;width: 60%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 strong {

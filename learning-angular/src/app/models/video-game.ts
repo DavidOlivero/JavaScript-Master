@@ -17,6 +17,7 @@ export class VideoGame {
         public title: string,
         public genre: string,
         public releaseYear: number,
-        public platform: string
+        public platform: string,
+        public id: number
     ) {}
 }

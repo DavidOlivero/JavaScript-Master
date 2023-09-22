@@ -1,10 +1,49 @@
 <h2>Listado de videojuegos en la página {{ title }}</h2>
 <h4>{{ description }}</h4>
 
-<div class="continer">
+<div id="continer">
+    <div id="add-game">
+        <p>Agrega un nuevo juego</p>
+        <input type="text" [(ngModel)]="myGame">
+        <input type="submit" (click)="getMyGame()">
+    
+        <p *ngIf="myGame">El juego que escribiste se llama: {{ myGame }}</p>
+
+        <form action="">
+            <h4>Agregar juegos a la lista</h4>
+            <form action="">
+                <input type="text" [(ngModel)]="myGameData.name" name="game-title" placeholder="Título del juego">
+                <br>
+                <input type="text" [(ngModel)]="myGameData.genre" name="game-genre" placeholder="Género del juego">
+                <br>
+                <input type="number" [(ngModel)]="myGameData.releaseYear" name="game-release" placeholder="Año de lanzamiento">
+                <br>
+                <input type="text" [(ngModel)]="myGameData.platform" name="game-platform" placeholder="Plataforma del juego">
+                <br>
+                <input type="submit" value="Agregar juego" (click)="addNewGame()">
+            </form>
+            
+        </form>
+    </div>
+    
     <ul>
         <ng-container *ngFor="let game of videoGames">
-            <li class="game" [style.backgroundColor]="game.releaseYear >= 2017 ? 'green' : ''">
+            <li class="game" 
+            [style.backgroundColor]="game.releaseYear >= 2017 ? 'green' : ''" 
+            [class.resalt]="game.releaseYear >= 2017"
+            [ngClass]="{
+                'pc-game': game.platform === 'Xbox One'
+            }"
+            >
+                
+                <div [ngStyle]="{
+                    display: 'flex',
+                    justifyContent: 'flex-end',
+                    backgroundColor: 'transparent'
+                }">
+                    <img src="../../../assets/trash.svg" alt="Icono de basura" (click)="deleteGame(game.id)" style="background-color: transparent; width: 17px;">
+                </div>
+                
                 <h5 *ngIf="game.releaseYear >= 2017" style="background-color: transparent;">Actual</h5>
                 {{ game.title }}
                 <br>
@@ -17,7 +56,7 @@
         </ng-container>
     </ul>
 
-    <h3 style="text-align: center; margin: 10px;">La plataforma preddominante es</h3>
+    <h3 style="text-align: center; margin: 10px;">La plataforma predominante es</h3>
     <!--Shitch case-->
     <div [ngSwitch]="dominatPlatform" style="text-align: center; margin: 10px;">
         <p *ngSwitchCase="'PlayStation 5'">
