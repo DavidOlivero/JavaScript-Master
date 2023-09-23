@@ -2,6 +2,8 @@
 <h4>{{ description }}</h4>
 
 <div id="continer">
+    <button (click)="changeGameVisibility()">Mostrar u ocultar lista de juegos</button>
+    
     <div id="add-game">
         <p>Agrega un nuevo juego</p>
         <input type="text" [(ngModel)]="myGame">
@@ -26,7 +28,7 @@
         </form>
     </div>
     
-    <ul>
+    <ul *ngIf="showGame">
         <ng-container *ngFor="let game of videoGames">
             <li class="game" 
             [style.backgroundColor]="game.releaseYear >= 2017 ? 'green' : ''" 
@@ -75,6 +77,4 @@
             PlayStation 4
         </p>
     </div>
-
-    <button (click)="changeTitle()">Cambiar el título</button>
 </div>

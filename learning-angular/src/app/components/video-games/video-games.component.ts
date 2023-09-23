@@ -16,6 +16,7 @@ OnDestroy -> When the componet is destroyed
 })
 
 export class VideoGamesComponent implements OnInit /*DoCheck, OnDestroy*/ {
+  public showGame: boolean
   public title: string
   public description: string
   public videoGames: Array<VideoGame> //VideoGames[]
@@ -34,6 +35,7 @@ export class VideoGamesComponent implements OnInit /*DoCheck, OnDestroy*/ {
   }
 
   constructor() {
+    this.showGame = true
     this.title = settings.title[1]
     this.description = settings.description[1]
     this.dominatPlatform = 'PlayStation 4'
@@ -54,8 +56,8 @@ export class VideoGamesComponent implements OnInit /*DoCheck, OnDestroy*/ {
     this.videoGames = [game1, game2, game3, game4, game5, game6, game7, game8, game9, game10];
   }
 
-  public changeTitle = ():void => {
-    this.title = 'Página de títulos cambiada'
+  public changeGameVisibility = ():void => {
+    this.showGame ? this.showGame = false : this.showGame = true
   }
 
   public getMyGame = ():void => {
