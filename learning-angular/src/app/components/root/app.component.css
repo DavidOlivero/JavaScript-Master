@@ -1,0 +1,41 @@
+nav {
+    margin: 0 0 30px 0;
+    background-color: #666666;
+    line-height: 40px;
+    position: fixed;
+    width: 100vw;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    gap: 50px;
+    background-color: transparent;
+    padding: 5px;
+}
+
+nav li {
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.5s;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+nav li a {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+nav li:hover {
+    background-color: #e98432;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #e98432 !important;
+}

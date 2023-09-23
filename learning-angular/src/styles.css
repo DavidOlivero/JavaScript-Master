@@ -21,12 +21,16 @@ h1, h2, h4 {
     margin: 5px;
 }
 
+h1, h2 {
+    margin-top: 100px;
+}
+
 h4 {
     color: #ccc;
 }
 
 button {
-    margin: 20px;
+    margin: 20px 0 0 0;
     position: relative;
     left: 50%;
     transform: translate(-50%);
@@ -36,6 +40,7 @@ button {
     border: 1px solid #fff;
     transition: 0.5s;
     font-size: 17px;
+    text-align: center;
 }
 
 button:hover {
