@@ -34,6 +34,17 @@
     background-color: #6db42a;
 }
 
+#filter input {
+ margin: 10px;
+ padding: 10px;
+ border-radius: 10px;
+ border: 1px solid #fff;
+ transition: 0.5s;
+}
+
+#filter input[type="submit"]:hover {
+    background-color: #6db42a;
+}
 
 .resalt:not(.pc-game) {
     filter: drop-shadow(5px 5px 10px #575757);

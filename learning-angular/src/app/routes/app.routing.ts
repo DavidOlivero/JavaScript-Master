@@ -9,8 +9,10 @@ import { NotFound404Component } from "../components/not-found404/not-found404.co
 
 // Routers array
 const appRoutes: Routes = [
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'videogames', component: VideoGamesComponent },
+    { path: 'videogames/:name', component: VideoGamesComponent },
     { path: '**', component: NotFound404Component }
 ]
 

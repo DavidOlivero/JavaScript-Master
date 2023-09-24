@@ -1,6 +1,7 @@
-import { Component, OnInit /*DoCheck, OnDestroy*/ } from '@angular/core';
+import { Component, OnInit, DoCheck /*OnDestroy*/ } from '@angular/core';
 import { settings } from "../../models/settings";
 import { VideoGame } from "../../models/video-game";
+import { Router, ActivatedRoute, Params } from "@angular/router";
 
 // The hooks are eventa that are runner during componets life cycle
 /*
@@ -15,7 +16,7 @@ OnDestroy -> When the componet is destroyed
   styleUrls: ['./video-games.component.css']
 })
 
-export class VideoGamesComponent implements OnInit /*DoCheck, OnDestroy*/ {
+export class VideoGamesComponent implements OnInit, DoCheck /*, OnDestroy*/ {
   public showGame: boolean
   public title: string
   public description: string
@@ -34,11 +35,20 @@ export class VideoGamesComponent implements OnInit /*DoCheck, OnDestroy*/ {
     platform: ''
   }
 
-  constructor() {
+  public game: string = ''
+
+  // Accedemos a la ruta actual
+  private _route: ActivatedRoute
+  private _router: Router
+
+  constructor(_route: ActivatedRoute, _router: Router) {
     this.showGame = true
     this.title = settings.title[1]
     this.description = settings.description[1]
     this.dominatPlatform = 'PlayStation 4'
+
+    this._route = _route
+    this._router = _router
     
     // Game list
     // Game list
@@ -80,6 +90,10 @@ export class VideoGamesComponent implements OnInit /*DoCheck, OnDestroy*/ {
     })
   }
 
+  public searchGame = ():void => {
+    this._router.navigate(['videogames', this.game])
+  }
+
   ngOnInit(): void {
     let amoungplatforms: { [key: string]: number } = {}
     
@@ -103,9 +117,15 @@ export class VideoGamesComponent implements OnInit /*DoCheck, OnDestroy*/ {
     this.dominatPlatform = maxPlatform
   }
 
-  // ngDoCheck(): void {
-  //   console.log("Se ha producido un cambio")
-  // }
+   ngDoCheck(): void {
+    this._route.params.subscribe(({ name }) => {
+      if (name !== undefined) {
+        this.videoGames = this.videoGames.filter(({ title }) => {
+          return title.trim().toLocaleLowerCase().includes(name.trim().toLocaleLowerCase())
+        })
+      }
+    })
+  }
 
   // ngOnDestroy(): void {
   //   console.log("El componente ha sido eliminado")

@@ -27,6 +27,16 @@
             
         </form>
     </div>
+
+    <div id="filter" [style]="{
+        position: 'relative',
+        left: '50%',
+        transform: 'translate(-50%)',
+        textAlign: 'center'
+    }">
+        <input type="text" [(ngModel)]="game" placeholder="GTA" name="game">
+        <input type="submit" value="Buscar" (click)="searchGame()">
+    </div>
     
     <ul *ngIf="showGame">
         <ng-container *ngFor="let game of videoGames">
