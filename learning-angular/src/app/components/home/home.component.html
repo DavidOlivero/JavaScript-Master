@@ -1,3 +1,20 @@
 <h1>Bienvenido a {{ title }}</h1>
 <h4>{{ description }}</h4>
 <button (click)="changeTitle()">Cambiar el título</button>
+
+<div *ngIf="!isLogin; then login else logout">
+    <!--
+    <h3 style="text-align: center; margin-top: 15px;">No estás logueado</h3>
+    <button style="display: block;" (click)="loginSystem()">Login</button>
+    -->
+</div>
+
+<ng-template #login>
+    <h3 style="text-align: center; margin-top: 15px;">No estás logueado</h3>
+    <button style="display: block;" (click)="loginSystem()">Login</button>
+</ng-template>
+
+<ng-template #logout>
+    <h3 style="text-align: center; margin-top: 15px;">Estás logueado</h3>
+    <button style="display: block;" (click)="loginSystem()">Logout</button>
+</ng-template>
