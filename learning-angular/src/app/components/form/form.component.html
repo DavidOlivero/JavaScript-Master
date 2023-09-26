@@ -1,0 +1,19 @@
+<div id="continer">
+    <h2>Formulario de contacto</h2>
+
+    <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" #name="ngModel" [(ngModel)]="contactUser.name" required [class.no-valid]="name.touched && !name.valid"><br>
+
+        <label for="surName">Apellido:</label>
+        <input type="text" id="surName" name="surName" #surname="ngModel" [(ngModel)]="contactUser.surName"><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" #email="ngModel" [(ngModel)]="contactUser.email" required [class.no-valid]="email.touched &&!email.valid"><br>
+
+        <label for="message">Mensaje:</label>
+        <textarea id="message" name="message" #messge="ngModel" [(ngModel)]="contactUser.message" rows="10px" cols="35" required [class.no-valid]="messge.touched && !messge.valid"></textarea><br>
+
+        <button type="submit" [class.inactive]="!contactForm.form.valid" [disabled]="!contactForm.form.valid">Enviar</button>
+    </form>
+</div>

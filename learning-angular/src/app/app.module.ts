@@ -10,6 +10,7 @@ import { NotFound404Component } from './components/not-found404/not-found404.com
 import { HomeComponent } from './components/home/home.component';
 import { ExternalApiComponent } from './components/external-api/external-api.component';
 import { CalculatorPipe } from "./pipes/calculator.pipe";
+import { FormComponent } from './components/form/form.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CalculatorPipe } from "./pipes/calculator.pipe";
     NotFound404Component,
     HomeComponent,
     ExternalApiComponent,
-    CalculatorPipe
+    CalculatorPipe,
+    FormComponent
   ],
   imports: [
     BrowserModule,

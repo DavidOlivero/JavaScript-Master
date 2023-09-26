@@ -49,3 +49,8 @@ button:not(#left, #rigth) {
 button:not(.inactive):hover {
     background-color: #7c7237;
 }
+
+.inactive {
+    cursor: not-allowed;
+    opacity: 0.5;
+}

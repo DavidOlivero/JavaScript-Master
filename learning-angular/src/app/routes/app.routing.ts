@@ -7,6 +7,7 @@ import { HomeComponent } from "../components/home/home.component";
 import { VideoGamesComponent } from "../components/video-games/video-games.component";
 import { NotFound404Component } from "../components/not-found404/not-found404.component";
 import { ExternalApiComponent } from "../components/external-api/external-api.component";
+import { FormComponent } from "../components/form/form.component";
 
 // Routers array
 const appRoutes: Routes = [
@@ -14,6 +15,7 @@ const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'videogames', component: VideoGamesComponent },
     { path: 'externalapi', component: ExternalApiComponent },
+    { path: 'form', component: FormComponent },
     { path: 'externalapi/:page', component: ExternalApiComponent },
     { path: 'videogames/:name', component: VideoGamesComponent },
     { path: '**', component: NotFound404Component }
