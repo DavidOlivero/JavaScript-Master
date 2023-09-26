@@ -13,6 +13,7 @@ export class ExternalApiComponent implements OnInit, DoCheck {
   public users : Array<any>
   public page: string
   public previousUrl: string
+  public date: Date
   
   constructor(
     private _externalApi: ExternalApi,
@@ -20,8 +21,9 @@ export class ExternalApiComponent implements OnInit, DoCheck {
     private _router: Router
   ) {
     this.users = new Array()
-    this.page = '0'
+    this.page = '1'
     this.previousUrl = ''
+    this.date = new Date()
   }
 
   private loadPage(): void {
@@ -65,5 +67,9 @@ export class ExternalApiComponent implements OnInit, DoCheck {
     }
 
     this._router.navigate(['externalapi', this.page])
+  }
+
+  public getPage(): number {
+    return parseInt(this.page)
   }
 }

@@ -9,6 +9,7 @@ import { VideoGamesComponent } from './components/video-games/video-games.compon
 import { NotFound404Component } from './components/not-found404/not-found404.component';
 import { HomeComponent } from './components/home/home.component';
 import { ExternalApiComponent } from './components/external-api/external-api.component';
+import { CalculatorPipe } from "./pipes/calculator.pipe";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ExternalApiComponent } from './components/external-api/external-api.com
     VideoGamesComponent,
     NotFound404Component,
     HomeComponent,
-    ExternalApiComponent
+    ExternalApiComponent,
+    CalculatorPipe
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,9 @@
 <div id="continer">
+    <p style="color: #fff;">{{ date | date: 'dd/mm/yy' }}</p>
+    <p style="color: #fff">{{ date | date: 'fullDate' | uppercase }}</p>
+    <p style="color: #fff;">{{ 'HOLA QUÉ HAY' | lowercase }}</p>
+    <p style="color: #fff;">{{ 34 | calculator: 4 }}</p>
+    
     <div class="target" *ngFor="let data of users">
         <img src="{{ data.avatar }}" alt="Imagen de usuario" width="128" height="128">
         <div>
@@ -8,11 +13,11 @@
     </div>
 
     <div id="control">
-        <button id="left" (click)="passPage('left')">
+        <button id="left" (click)="passPage('left')" [ngClass]="{'inactive': page === '1'}" [disabled]="page === '1'">
             <img src="../../../assets/left-arrow.svg" alt="Ir a la anterior página">
         </button>
 
-        <button id="rigth" (click)="passPage('rigth')">
+        <button id="rigth" (click)="passPage('rigth')" [disabled]="page === '2'" [ngClass]="{'inactive': page === '2'}">
             <img src="../../../assets/rigth-arrow.svg" alt="Ir a la derecha">
         </button>
     </div>

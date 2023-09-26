@@ -46,6 +46,6 @@ button:not(#left, #rigth) {
     padding: 10px;
 }
 
-button:hover {
+button:not(.inactive):hover {
     background-color: #7c7237;
 }
