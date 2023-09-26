@@ -11,9 +11,9 @@
     
         <p *ngIf="myGame">El juego que escribiste se llama: {{ myGame }}</p>
 
-        <form action="">
+        <div>
             <h4>Agregar juegos a la lista</h4>
-            <form action="">
+            <form class="un-styles">
                 <input type="text" [(ngModel)]="myGameData.name" name="game-title" placeholder="Título del juego">
                 <br>
                 <input type="text" [(ngModel)]="myGameData.genre" name="game-genre" placeholder="Género del juego">
@@ -25,7 +25,7 @@
                 <input type="submit" value="Agregar juego" (click)="addNewGame()">
             </form>
             
-        </form>
+        </div>
     </div>
 
     <div id="filter" [style]="{

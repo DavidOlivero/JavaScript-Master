@@ -54,3 +54,23 @@ button:not(.inactive):hover {
     cursor: not-allowed;
     opacity: 0.5;
 }
+
+form:not(.un-styles) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+form input:not(.un-styles), form:not(.un-styles) textarea {
+    border: 1px solid #fff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+form:not(.un-styles) .no-valid {
+    border: 2px solid #ff0000;
+}
+
+form:not(.un-styles) button {
+    width: 90%;
+}

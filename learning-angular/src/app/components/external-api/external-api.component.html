@@ -1,4 +1,23 @@
 <div id="continer">
+    <form #addUserContact="ngForm" (ngSubmit)="createUser(addUserContact)">
+        <label>Primer nombre</label>
+        <input type="text" name="username" #name="ngModel" [(ngModel)]="newUser.first_name" required [class.no-valid]="!name.valid && name.touched">
+
+        <label>Segundo nombre</label>
+        <input type="text" name="last-name" #lastName="ngModel" [(ngModel)]="newUser.last_name">
+    
+        <label>Ocupasión del usuario</label>
+        <input type="text" name="job" #job="ngModel" [(ngModel)]="newUser.job" required [class.no-valid]="!job.valid && job.touched">
+
+        <label>Correo electrónico</label>
+        <input type="email" name="email" #email="ngModel" [(ngModel)]="newUser.email" required [class.no-valid]="!email.valid && email.touched">
+
+        <label>URL del avatar</label>
+        <input type="text" name="avatar" #avatar="ngModel" [(ngModel)]="newUser.avatar">
+    
+        <button type="submit" [class.inactive]="!addUserContact.form.valid" [disabled]="!addUserContact.form.valid">Guardar</button>
+    </form>
+
     <p style="color: #fff;">{{ date | date: 'dd/mm/yy' }}</p>
     <p style="color: #fff">{{ date | date: 'fullDate' | uppercase }}</p>
     <p style="color: #fff;">{{ 'HOLA QUÉ HAY' | lowercase }}</p>
@@ -12,6 +31,14 @@
         </div>
     </div>
 
+    <div class="target" *ngIf="userAdded['first_name']">
+        <img src="{{ userAdded['avatar'] }}" alt="Imagen de usuario" width="128" height="128">
+        <div>
+            <h3>{{ userAdded['first_name']+ " " + userAdded['last_name'] }}</h3>
+            <p><strong>{{ userAdded['email'] }}</strong></p>
+        </div>
+    </div>
+
     <div id="control">
         <button id="left" (click)="passPage('left')" [ngClass]="{'inactive': page === '1'}" [disabled]="page === '1'">
             <img src="../../../assets/left-arrow.svg" alt="Ir a la anterior página">
@@ -21,4 +48,5 @@
             <img src="../../../assets/rigth-arrow.svg" alt="Ir a la derecha">
         </button>
     </div>
+
 </div>

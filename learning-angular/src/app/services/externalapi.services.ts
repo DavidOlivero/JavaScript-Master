@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 
 @Injectable()
 export class ExternalApi {
-    public url: string
+    private url: string
 
     constructor(
         private _http: HttpClient
@@ -14,5 +14,12 @@ export class ExternalApi {
 
     public getUser(page:string): Observable<any> {
         return this._http.get(this.url + '/api/users?page=' + page)
+    }
+
+    public addUser(user: any): Observable<any> {
+        const params: string = JSON.stringify(user)
+        const headers = new HttpHeaders().set('Content-Type', 'application/json')
+
+        return this._http.post(this.url + '/api/user', params, {headers: headers})
     }
 }

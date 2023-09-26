@@ -2,6 +2,8 @@ import { Component, OnInit, DoCheck } from '@angular/core';
 import { ExternalApi } from "../../services/externalapi.services";
 import { Router, ActivatedRoute } from "@angular/router";
 import { Observable } from 'rxjs';
+import { HttpErrorResponse } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-external-api',
@@ -14,6 +16,21 @@ export class ExternalApiComponent implements OnInit, DoCheck {
   public page: string
   public previousUrl: string
   public date: Date
+  public newUser: {
+    first_name: string,
+    last_name: string,
+    job: string,
+    avatar: string
+    email: string
+  }
+
+  public userAdded: {
+    first_name: "",
+    last_name: '',
+    job: "",
+    avatar: '',
+    email: ''
+  }
   
   constructor(
     private _externalApi: ExternalApi,
@@ -24,6 +41,21 @@ export class ExternalApiComponent implements OnInit, DoCheck {
     this.page = '1'
     this.previousUrl = ''
     this.date = new Date()
+    this.newUser = {
+      first_name: "",
+      last_name: '',
+      job: "",
+      avatar: '',
+      email: ''
+    }
+
+    this.userAdded = {
+      first_name: "",
+      last_name: '',
+      job: "",
+      avatar: '',
+      email: ''
+    }
   }
 
   private loadPage(): void {
@@ -32,7 +64,7 @@ export class ExternalApiComponent implements OnInit, DoCheck {
         this.users = data
       },
       error => {
-        console.log(<any>error)
+        console.log(<HttpErrorResponse>error)
       }
     )
   }
@@ -71,5 +103,20 @@ export class ExternalApiComponent implements OnInit, DoCheck {
 
   public getPage(): number {
     return parseInt(this.page)
+  }
+
+  public createUser(form: NgForm): void {
+    this._externalApi.addUser(this.newUser).subscribe(
+      (value) => {
+        if (!value.avatar) value.avatar = 'https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=826&t=st=1695764951~exp=1695765551~hmac=3c1c8e20a47657d2d5bf5dbf91724a141f5c1eba243feed1dfe13eae266dd063'
+        
+        this.userAdded = value
+
+        form.reset()
+      },
+      (error) => {
+        console.log(<any>error)
+      }
+    )
   }
 }
