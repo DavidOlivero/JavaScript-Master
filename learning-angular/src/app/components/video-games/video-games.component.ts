@@ -1,7 +1,7 @@
 import { Component, OnInit, DoCheck /*OnDestroy*/ } from '@angular/core';
 import { settings } from "../../models/settings";
 import { VideoGame } from "../../models/video-game";
-import { Router, ActivatedRoute, Params } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 import { VideoGameService } from "../../services/game.services";
 
 // The hooks are eventa that are runner during componets life cycle

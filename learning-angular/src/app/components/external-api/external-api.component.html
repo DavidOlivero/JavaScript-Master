@@ -1,0 +1,19 @@
+<div id="continer">
+    <div class="target" *ngFor="let data of users">
+        <img src="{{ data.avatar }}" alt="Imagen de usuario" width="128" height="128">
+        <div>
+            <h3>{{ data.first_name + " " + data.last_name }}</h3>
+            <p><strong>{{ data.email }}</strong></p>
+        </div>
+    </div>
+
+    <div id="control">
+        <button id="left" (click)="passPage('left')">
+            <img src="../../../assets/left-arrow.svg" alt="Ir a la anterior página">
+        </button>
+
+        <button id="rigth" (click)="passPage('rigth')">
+            <img src="../../../assets/rigth-arrow.svg" alt="Ir a la derecha">
+        </button>
+    </div>
+</div>

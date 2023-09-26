@@ -30,17 +30,20 @@ h4 {
 }
 
 button {
-    margin: 20px 0 0 0;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%);
-    padding: 10px;
     border-radius: 10px;
     background-color: #c7b33f;
     border: 1px solid #fff;
     transition: 0.5s;
     font-size: 17px;
     text-align: center;
+}
+
+button:not(#left, #rigth) {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    margin: 20px 0 0 0;
+    padding: 10px;
 }
 
 button:hover {
