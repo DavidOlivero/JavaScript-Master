@@ -1,0 +1,147 @@
+import { mongooseModel } from "../models/projects.js";
+
+export const controller = {
+    home: (req, res) => {
+        return res.status(200).send({
+            message: 'Este es la home'
+        })
+    },
+
+    test: (req, res) => {
+        // Get data from formule encode
+        console.log(req.body.name)
+
+        // Get data for url
+        console.log(req.query.secondname)
+
+        // Get data for url params
+        console.log(req.params.lastname)
+        
+        return res.status(200).send({
+            message: 'Esta es la ruta test'
+        })
+    },
+
+    saveProject: (req, res) => {
+        const Project = new mongooseModel()
+        
+        const {
+            name, 
+            description, 
+            category, 
+            languages, 
+            year,
+            image 
+        } = req.body
+
+        Project.name = name
+        Project.description = description
+        Project.category = category
+        Project.languages = languages
+        Project.year = year
+        Project.image = image
+
+        Project.save()
+            .then((projectStored) => {
+                if (!projectStored) return res.status(500).send({
+                    message: 'No se pudo guardar el projecto en la base de datos'
+                })
+                
+                return res.status(200).send({
+                    project: projectStored
+                })
+            })
+            .catch((err) => {
+                return res.status(500).send({
+                    message: 'Ha ocurrido un error al intentar guardar en la base de datos'
+                })
+            })
+    },
+
+    getProject: (req, res) => {
+        // const projectId = req.body.id
+        const projectId = req.params.id
+
+        if (projectId === null) {
+            res.status.send({
+                message: 'El elemento no existe'
+            })
+        }
+
+        mongooseModel.findById(projectId)
+            .then((project) => {
+                if (!project) return res.status(404).send({
+                    message: 'El elemento no existe'
+                })
+                
+                return res.status(200).send({
+                    project: project
+                })
+            })
+            .catch((err) => {
+                res.status(500).send({
+                    message: 'Hubo un problema al tratar de buscar el elemento'
+                })
+            })
+    },
+
+    getProjects: (req, res) => {
+        mongooseModel.find({}).sort('-year').exec()
+            .then((projects) => {
+                if (!projects) return res.status(404).send({
+                    message: 'No hay projectos que mostrar'
+                })
+
+                return res.status(200).send({ projects })
+            })
+            .catch((err) => {
+                return res.status(500).send({
+                    message: 'Ha ocurrido un error al tratar de mostrar los projectos'
+                })
+            })
+    },
+
+    updateProject: (req, res) => {
+        const projectId = req.params.id
+        const elementUpdated = req.body
+
+        mongooseModel.findByIdAndUpdate(projectId, elementUpdated, { new: true }).exec()
+            .then((project) => {
+                if (!project) {
+                    return res.status(404).send({
+                        message: 'No hay ningún elemento a actualizar con ese id'
+                    })
+
+                }
+                
+                return res.status(200).send({
+                    project
+                })
+            })
+            .catch((err) => {
+                return res.status(500).send({
+                    message: 'Ha ocurrido un error al intentar actualizar el elemento'
+                })
+            })
+    },
+
+    deleteProject: (req, res) => {
+        const projectId = req.params.id
+        
+        mongooseModel.findByIdAndDelete(projectId)
+            .then((removedProject) => {
+                if (!removedProject) return res.status('404').send({
+                    message: 'No se a aecontrado el elemento a eliminar'
+                })
+
+                return res.status(200).send({
+                    removedProject
+                })
+            })
+            .catch((_err) => {
+                return res.status(500).send({
+                    message: 'Ocurrio un error al intentar eliminar el elemento'
+                })
+            })
+    }
+} 
