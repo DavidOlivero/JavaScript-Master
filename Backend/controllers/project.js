@@ -1,4 +1,5 @@
 import { mongooseModel } from "../models/projects.js";
+import { unlink } from "fs";
 
 export const controller = {
     home: (req, res) => {
@@ -140,8 +141,50 @@ export const controller = {
             })
             .catch((_err) => {
                 return res.status(500).send({
-                    message: 'Ocurrio un error al intentar eliminar el elemento'
+                    message: 'Ocurrio un erro r al intentar eliminar el elemento'
                 })
             })
+    },
+
+    uploadImage: (req, res) => {
+        const projectId = req.params.id
+        let fileName = 'Vacío...'
+
+        const fileInfo = req.files
+
+        if (fileInfo) {
+            const filePath = fileInfo.images.path
+            fileName = filePath.split('\\')[1]
+            const extention = fileName.split('.')[1]
+
+            if (extention === 'png' || extention === 'jpg' || extention === 'jpeg' || extention === 'gif') {
+                mongooseModel.findByIdAndUpdate(projectId, { image: fileName }, { new: true })
+                .then((projectUpdate) => {
+                    if (!projectUpdate) return res.status(404).send({
+                        message: 'No existe el projecto'
+                    })
+    
+                    return res.status(200).send({
+                        project: projectUpdate
+                    })
+                })
+                .catch((err) => {
+                    res.status(500).send({
+                        message: 'Ha ocurrido un errror al intentar guardar la imagem'
+                    })
+                })
+            } else {
+                unlink(filePath, (err) => {
+                    return res.status(404).send({
+                        message: 'La extención del fichero no es válida'
+                    })
+                })
+            }
+            
+        }
+
+        /*return res.status(500).send({
+            message: 'No se ha cargado ninguna imagen'
+        })*/
     }
 } 
