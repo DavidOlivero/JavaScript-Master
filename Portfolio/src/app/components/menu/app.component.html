@@ -1,0 +1,19 @@
+<header>
+    <ul>
+        <li><a [routerLink]="['aboutme']">Sobre mi</a></li>
+        <li><a [routerLink]="['projectslist']">Projectos</a></li>
+
+        <li id="logo"><a [routerLink]="['aboutme']">DO</a></li>
+
+        <li><a [routerLink]="['generateprojects']">Crear projectos</a></li>
+        <li><a [routerLink]="['contacts']">Contacto</a></li>
+    </ul>
+</header>
+
+<section id="content">
+    <router-outlet></router-outlet>
+</section>
+
+<footer>
+    <p>Portafolio de David &copy;</p>
+</footer>

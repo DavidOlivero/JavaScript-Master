@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'yanone';
+    src: url('./assets/fonts/Yanone/YanoneKaffeesatzTTF/YanoneKaffeesatz-Light.ttf');
+}
+
+@font-face {
+    font-family: 'blackFinger';
+    src: url('./assets/fonts/BlackFinger/Black_Finger_Demo.ttf');
+}
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'yanone', monospace;
+    font-size: 20px;
+    background-image: url('./assets/img/pattern.png');
+}
