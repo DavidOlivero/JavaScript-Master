@@ -1,12 +1,12 @@
 <header>
     <ul>
-        <li [routerLinkActive]="'active'"><a [routerLink]="['aboutme']">Sobre mi</a></li>
+        <li [routerLinkActive]="'active'"><a [routerLink]="['home']">Sobre mi</a></li>
         <li [routerLinkActive]="'active'"><a [routerLink]="['projectslist']">Projectos</a></li>
 
-        <li id="logo"><a [routerLink]="['aboutme']">DO</a></li>
+        <li id="logo"><a [routerLink]="['home']">DO</a></li>
 
         <li [routerLinkActive]="'active'"><a [routerLink]="['generateprojects']">Crear projectos</a></li>
-        <li><a [routerLink]="['contacts']">Contacto</a></li>
+        <li [routerLinkActive]="'active'"><a [routerLink]="['contact']">Contacto</a></li>
     </ul>
 </header>
 

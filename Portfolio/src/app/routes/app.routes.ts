@@ -8,6 +8,7 @@ import { CreateProjectsComponent } from '../components/create-projects/create-pr
 import { ContactComponent } from '../components/contact/contact.component';
 
 const appRoutes: Routes = [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: AboutMeComponent },
     { path: 'projectslist', component: ProjectsComponent },
     { path: 'generateprojects', component: CreateProjectsComponent },

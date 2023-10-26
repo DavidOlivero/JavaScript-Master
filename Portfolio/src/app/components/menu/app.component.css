@@ -51,7 +51,7 @@ header ul li:not(#logo):hover, .active {
     min-height: 82vh;
     background-color: #fff;
     filter: drop-shadow(0 0 10px #727272);
-    padding-top: 100px;
+    padding: 100px 60px 60px 60px;
 }
 
 footer {
