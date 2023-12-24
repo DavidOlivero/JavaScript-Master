@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
 
 import { routin, appRoutinProviders } from "./routes/app.routes";
 
@@ -19,10 +21,12 @@ import { ContactComponent } from './components/contact/contact.component';
   ],
   imports: [
     BrowserModule,
-    routin
+    routin,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
-    appRoutinProviders
+    appRoutinProviders,
   ],
   bootstrap: [AppMenu]
 })
