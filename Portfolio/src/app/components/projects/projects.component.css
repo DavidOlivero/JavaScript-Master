@@ -1,0 +1,38 @@
+#continer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    h2 {
+        margin: 20px;
+    }
+
+    #projects {
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+    
+            li {
+                background-color: #dbd4d4;
+                border-radius: 10px;
+                width: 90%;
+    
+                img {
+                    border-radius: 10px 10px 0 0;
+                    width: 100%;
+                }
+    
+                #info {
+                    text-align: center;
+                    line-height: 30px;
+                    padding: 10px;
+                }
+    
+            }
+        }
+    }
+
+}
