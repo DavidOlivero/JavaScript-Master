@@ -1,5 +1,6 @@
+import path from "path";
 import { mongooseModel } from "../models/projects.js";
-import { unlink } from "fs";
+import { unlink, existsSync } from "fs";
 
 export const controller = {
     home: (req, res) => {
@@ -150,10 +151,10 @@ export const controller = {
         const projectId = req.params.id
         let fileName = 'Vacío...'
 
-        const fileInfo = req.files
+        const fileInfo = req.files.image
 
         if (fileInfo) {
-            const filePath = fileInfo.images.path
+            const filePath = fileInfo.path
             fileName = filePath.split('\\')[1]
             const extention = fileName.split('.')[1]
 
@@ -170,8 +171,9 @@ export const controller = {
                 })
                 .catch((err) => {
                     res.status(500).send({
-                        message: 'Ha ocurrido un errror al intentar guardar la imagem'
+                        message: 'Ha ocurrido un errror al intentar guardar la imagem:'
                     })
+                    console.log(err)
                 })
             } else {
                 unlink(filePath, (err) => {
@@ -182,9 +184,18 @@ export const controller = {
             }
             
         }
+    },
 
-        /*return res.status(500).send({
-            message: 'No se ha cargado ninguna imagen'
-        })*/
+    getImageFile: (req, res) => {
+        let file = req.params.file;
+        let path_file = './uploads/' + file
+        
+        if (existsSync(path_file)) {
+            return res.sendFile(path.resolve(path_file))
+        } else {
+            return res.status(200).send({
+                message: "No existe la imagen..."
+            })
+        }
     }
 } 
