@@ -1,25 +1,22 @@
 #continer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-
-    #title {
-        text-align: center;
-        font-family: 'blackFinger';
-        border-bottom: 1px solid #ccc;
-        margin-bottom: 20px;
-    }
+    align-items: center;
 }
 
 #continer form {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
 label {
-    padding: 5px;
+    display: block;
     font-weight: bold;
+    margin: 10px 10px 10px 0;
 }
 
 span {

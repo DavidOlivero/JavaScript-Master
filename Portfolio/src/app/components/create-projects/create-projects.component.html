@@ -1,54 +1,52 @@
-<div id="continer">
-    <section id="form">
-        <h2 id="title">{{title}}</h2>
+<section id="continer">
+    <h2 class="title">{{title}}</h2>
 
-        <div *ngIf="status !== null" id="status-cartel" [ngClass]="status ? 'success' : 'error'">
-            <h3 *ngIf="status">Projecto guardado satisfactoriamente</h3>
-            <h3 *ngIf="!status">Ha ocurrido un error al intentar guardar el projecto {{ status }}</h3>
+    <div *ngIf="status !== null" id="status-cartel" [ngClass]="status ? 'success' : 'error'">
+        <h3 *ngIf="status">Projecto guardado satisfactoriamente</h3>
+        <h3 *ngIf="!status">Ha ocurrido un error al intentar guardar el projecto {{ status }}</h3>
+    </div>
+
+    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+        <div id="name">
+            <label for="name">Nombre</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required>
+
+            <span *ngIf="name.touched && !name.valid">
+                El nombre del proyecto es obligatorio
+            </span>
         </div>
-    
-        <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
-            <div id="name">
-                <label for="name">Nombre</label>
-                <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required>
 
-                <span *ngIf="name.touched && !name.valid">
-                    El nombre del proyecto es obligatorio
-                </span>
-            </div>
-    
-            <div id="descriptino">
-                <label for="description">Descripción</label>
-                <textarea name="descriptin" id="description" cols="30" rows="5" #description="ngModel" [(ngModel)]="project.description" required></textarea>
+        <div id="descriptino">
+            <label for="description">Descripción</label>
+            <textarea name="descriptin" id="description" cols="30" rows="5" #description="ngModel" [(ngModel)]="project.description" required></textarea>
 
-                <span *ngIf="description.touched && !description.valid">
-                    La descripción del proyecto es obligatoria
-                </span>
-            </div>
-    
-            <div id="category">
-                <label for="category">Categoría</label>
-                <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" required>
+            <span *ngIf="description.touched && !description.valid">
+                La descripción del proyecto es obligatoria
+            </span>
+        </div>
 
-                <span *ngIf="category.touched && !category.valid">
-                    La categoría del proyecto es obligatoria
-                </span>
-            </div>
-    
-            <div id="year">
-                <label for="year">Año de cración</label>
-                <input type="text" name="year" #year="ngModel" [(ngModel)]="project.year">
-            </div>
-    
-            <div id="image">
-                <label for="image">Imagen</label>
-                <input type="file" name="image" placeholder="Subir una imagen" (change)="
-                fileChangeEvent($event)">
-            </div>
-    
-            <div></div>
+        <div id="category">
+            <label for="category">Categoría</label>
+            <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" required>
 
-            <input type="submit" value="Enviar" [disabled]="!projectForm.form.valid">
-        </form>
-    </section>
-</div>
+            <span *ngIf="category.touched && !category.valid">
+                La categoría del proyecto es obligatoria
+            </span>
+        </div>
+
+        <div id="year">
+            <label for="year">Año de cración</label>
+            <input type="text" name="year" #year="ngModel" [(ngModel)]="project.year">
+        </div>
+
+        <div id="image">
+            <label for="image">Imagen</label>
+            <input type="file" name="image" placeholder="Subir una imagen" (change)="
+            fileChangeEvent($event)">
+        </div>
+
+        <div></div>
+
+        <input type="submit" value="Enviar" [disabled]="!projectForm.form.valid">
+    </form>
+</section>

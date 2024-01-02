@@ -18,4 +18,13 @@ body {
     font-family: 'yanone', monospace;
     font-size: 20px;
     background-image: url('./assets/img/pattern.png');
+    
+    .title {
+        text-align: center;
+        font-family: 'blackFinger';
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 20px;
+        width: 80%;
+    }
 }
+

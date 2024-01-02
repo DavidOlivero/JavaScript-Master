@@ -6,6 +6,7 @@ import { AboutMeComponent } from '../components/about-me/about-me.component';
 import { ProjectsComponent } from '../components/projects/projects.component';
 import { CreateProjectsComponent } from '../components/create-projects/create-projects.component';
 import { ContactComponent } from '../components/contact/contact.component';
+import { DetailsProjectComponent } from "../components/details-project/details-project.component";
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -13,6 +14,7 @@ const appRoutes: Routes = [
     { path: 'projectslist', component: ProjectsComponent },
     { path: 'generateprojects', component: CreateProjectsComponent },
     { path: 'contact', component: ContactComponent },
+    { path: 'projectdetails/:id', component:  DetailsProjectComponent},
     { path: '**', component: AboutMeComponent }
 ]
 

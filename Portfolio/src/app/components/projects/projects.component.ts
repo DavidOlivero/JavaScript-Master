@@ -27,7 +27,7 @@ export class ProjectsComponent implements OnInit {
   }
 
   public getProject() {
-    this._projectService.getProject().subscribe(
+    this._projectService.getProjects().subscribe(
       {
         next: (response: any) => {
           response.projects.forEach((element: Project) => {

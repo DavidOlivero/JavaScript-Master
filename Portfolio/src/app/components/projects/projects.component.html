@@ -1,17 +1,17 @@
 <article id="continer">
-    <h2>Lista de Projectos</h2>
+    <h2 class="title">Lista de Projectos</h2>
 
     <section id="projects">
         <ul>
             <li *ngFor="let project of projects">
-                <img *ngIf="project.image" src="{{url + '/getimagepath/' + project.image}}" alt="Imagen que describe el proyecto" width="300" height="200">
-                
-                <div id="info">
-                    <h3>{{project.name}}</h3>
-                    <p>{{project.description}}</p>
-                    <p><strong>Categoría: </strong>{{project.category}}</p>
-                    <p><strong>Año de creación: </strong>{{project.year}}</p>
-                </div>
+                <a [routerLink]="['/projectdetails/', project._id]">
+                    <img *ngIf="project.image" src="{{url + '/getimagepath/' + project.image}}" alt="Imagen que describe el proyecto" width="300" height="200">
+                    
+                    <div id="info">
+                        <h3>{{project.name}}</h3>
+                        <p>{{project.description}}</p>
+                    </div>
+                </a>
             </li>
         </ul>
     </section>
