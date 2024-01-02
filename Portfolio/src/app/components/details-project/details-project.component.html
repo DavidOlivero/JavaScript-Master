@@ -1,0 +1,16 @@
+<section id="continer">
+    <h2 class="title">{{project.name}}</h2>
+
+    <article id="target-info">
+        <img *ngIf="project.image" src="{{url + '/getimagepath/' + project.image}}" alt="Imagen que describe el proyecto" width="300" height="200">
+
+        <div id="description">
+            <p>{{project.description}}</p>
+        </div>
+        
+        <div id="general-info">
+            <p><strong>Categoría: </strong>{{project.category}}</p>
+            <p><strong>Año de creación: </strong>{{project.year}}</p>
+        </div>
+    </article>
+</section>
