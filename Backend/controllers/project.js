@@ -30,8 +30,7 @@ export const controller = {
         const {
             name, 
             description, 
-            category, 
-            languages, 
+            category,
             year,
             image 
         } = req.body
@@ -39,9 +38,10 @@ export const controller = {
         Project.name = name
         Project.description = description
         Project.category = category
-        Project.languages = languages
         Project.year = year
         Project.image = image
+
+        console.log(description)
 
         Project.save()
             .then((projectStored) => {

@@ -29,26 +29,31 @@ export class CreateProjectsComponent {
   }
 
   public onSubmit(forms: NgForm) {
-    // Guardar datos básicos    
+    // Guardar datos básicos 
+    console.log(this.project)
+    
     this._projectService.saveProject(this.project).subscribe(
-      response => {
-        // Subir la imagen
+      {
+        next: response => {
+          console.log(response)
 
-        const url: string = API + "/uploadimage/" + response.project._id
-        console.log(url)
+          // Subir la imagen
+          const url: string = API + "/uploadimage/" + response.project._id
+          console.log(url)
 
-        this._uploadService.makeFileRequest(url, [], this.filesToUpload, 'image')
-        .then(result => {
-            console.log(result)
-            
-            this.status = true
+          this._uploadService.makeFileRequest(url, [], this.filesToUpload, 'image')
+          .then(result => {
+              console.log(result)
+              
+              this.status = true
 
-            setTimeout(() => this.status = null, 2000)
-          })
-      },
-      error => {
-        console.log(<any> error)
-        this.status = null
+              setTimeout(() => this.status = null, 2000)
+            })
+        },
+        error: error => {
+          console.log(<any> error)
+          this.status = null
+        }
       }
     )
 
