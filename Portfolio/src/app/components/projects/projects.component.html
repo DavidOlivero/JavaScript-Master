@@ -5,8 +5,8 @@
         <ul>
             <li *ngFor="let project of projects">
                 <a [routerLink]="['/projectdetails/', project._id]">
-                    <img *ngIf="project.image" src="{{url + '/getimagepath/' + project.image}}" alt="Imagen que describe el proyecto" width="300" height="200">
-                    
+                    <img *ngIf="project.image" ngSrc="{{url + '/getimagepath/' + project.image}}" alt="Imagen que describe el proyecto" width="300" height="200">
+
                     <div id="info">
                         <h3>{{project.name}}</h3>
                         <p>{{project.description}}</p>

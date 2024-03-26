@@ -14,6 +14,9 @@ dependencies:
   mongoose:
     specifier: ^7.5.4
     version: 7.5.4
+  mongose:
+    specifier: 0.0.2-security
+    version: 0.0.2-security
 
 devDependencies:
   nodemon:
@@ -557,6 +560,10 @@ packages:
       - mongodb-client-encryption
       - snappy
       - supports-color
+    dev: false
+
+  /mongose@0.0.2-security:
+    resolution: {integrity: sha512-XJUBQHhC/12+hWtrcB1Ww+gkxSzbxg4VdjpNlBQGvFoyPm1bErhA+3n/IkWbGCkavFB1OSycpvpCRphPsZXgLw==}
     dev: false
 
   /mpath@0.9.0:

@@ -29,9 +29,9 @@ export class CreateProjectsComponent {
   }
 
   public onSubmit(forms: NgForm) {
-    // Guardar datos básicos 
+    // Guardar datos básicos
     console.log(this.project)
-    
+
     this._projectService.saveProject(this.project).subscribe(
       {
         next: response => {
@@ -44,7 +44,7 @@ export class CreateProjectsComponent {
           this._uploadService.makeFileRequest(url, [], this.filesToUpload, 'image')
           .then(result => {
               console.log(result)
-              
+
               this.status = true
 
               setTimeout(() => this.status = null, 2000)

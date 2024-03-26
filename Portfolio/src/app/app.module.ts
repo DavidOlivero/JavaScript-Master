@@ -11,6 +11,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { CreateProjectsComponent } from './components/create-projects/create-projects.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { DetailsProjectComponent } from './components/details-project/details-project.component';
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DetailsProjectComponent } from './components/details-project/details-pr
     BrowserModule,
     routin,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgOptimizedImage
   ],
   providers: [
     appRoutinProviders,

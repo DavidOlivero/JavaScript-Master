@@ -41,7 +41,7 @@ export const controller = {
         Project.year = year
         Project.image = image
 
-        console.log(description)
+        console.log(name, description, category, year)
 
         Project.save()
             .then((projectStored) => {
@@ -54,6 +54,7 @@ export const controller = {
                 })
             })
             .catch((err) => {
+                console.log(err)
                 return res.status(500).send({
                     message: 'Ha ocurrido un error al intentar guardar en la base de datos'
                 })
