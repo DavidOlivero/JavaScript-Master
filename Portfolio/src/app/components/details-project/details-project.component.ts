@@ -1,4 +1,4 @@
-import { APP_ID, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { OnInit } from "@angular/core";
 import { Router, ActivatedRoute, Params, Route } from "@angular/router";
 import { ProjectService } from "../../services/project.service";
@@ -34,6 +34,18 @@ export class DetailsProjectComponent implements OnInit {
 
       error: (error) => {
           console.log(error)
+      }
+    })
+  }
+
+  public deleteProjects(id: any) {
+    this._projectService.deleteProject(id).subscribe({
+      next: response => {
+        this._router.navigate(['/projectslist'])
+      },
+
+      error: error => {
+        console.log(error)
       }
     })
   }

@@ -1,16 +1,21 @@
 <section id="continer">
-    <h2 class="title">{{project.name}}</h2>
+  <h2 class="title">{{project.name}}</h2>
 
-    <article id="target-info">
-        <img *ngIf="project.image" src="{{url + '/getimagepath/' + project.image}}" alt="Imagen que describe el proyecto" width="300" height="200">
+  <article id="target-info">
+      <img *ngIf="project.image" ngSrc="{{url + '/getimagepath/' + project.image}}" alt="Imagen que describe el proyecto" width="3480" height="2160">
 
-        <div id="description">
-            <p>{{project.description}}</p>
-        </div>
-        
-        <div id="general-info">
-            <p><strong>Categoría: </strong>{{project.category}}</p>
-            <p><strong>Año de creación: </strong>{{project.year}}</p>
-        </div>
-    </article>
+      <div id="description">
+          <p>{{project.description}}</p>
+      </div>
+
+      <div id="general-info">
+          <p><strong>Categoría: </strong>{{project.category}}</p>
+          <p><strong>Año de creación: </strong>{{project.year}}</p>
+      </div>
+  </article>
+
+  <div id="button-elements">
+    <button (click)="deleteProjects(project._id)" id="delete">Borrar proyecto</button>
+    <button id="edit">Editar proyecto</button>
+  </div>
 </section>

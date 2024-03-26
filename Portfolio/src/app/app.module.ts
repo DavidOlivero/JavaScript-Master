@@ -12,6 +12,8 @@ import { CreateProjectsComponent } from './components/create-projects/create-pro
 import { ContactComponent } from './components/contact/contact.component';
 import { DetailsProjectComponent } from './components/details-project/details-project.component';
 import {NgOptimizedImage} from "@angular/common";
+import { ComponentsComponent } from './src/app/components/components.component';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import {NgOptimizedImage} from "@angular/common";
     ProjectsComponent,
     CreateProjectsComponent,
     ContactComponent,
-    DetailsProjectComponent
+    DetailsProjectComponent,
+    ComponentsComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

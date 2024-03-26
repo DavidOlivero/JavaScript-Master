@@ -1,34 +1,54 @@
 #continer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 
-    #target-info {
-        background-color: #ccc;
-        width: 40%;
-        border-radius: 10px;
+  #target-info {
+    background-color: #ccc;
+    width: 40%;
+    border-radius: 10px;
 
-        img {
-            border-radius: 10px 10px 0 0;
-            width: 100%;
-            height: 10%;
-        }
-
-        #description {
-            padding: 20px;
-            margin: 20px;
-            text-align: center;
-            border-top: 1px solid #000;
-            border-bottom: 1px solid #000;
-        }
-
-        #general-info {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+    img {
+      border-radius: 10px 10px 0 0;
+      width: 100%;
+      height: 10%;
     }
+
+    #description {
+      padding: 20px;
+      margin: 20px;
+      text-align: center;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+    }
+
+    #general-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+  }
+
+  #button-elements button {
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    transition: color 500ms, transform 500ms;
+  }
+
+  #delete {
+    background-color: #fd4545;
+  }
+
+  #edit {
+    background-color: #0abeff;
+  }
+
+  #button-elements button:hover {
+    transform: scale(1.1, 1.1);
+  }
 }
