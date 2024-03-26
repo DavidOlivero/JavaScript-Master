@@ -16,6 +16,6 @@
 
   <div id="button-elements">
     <button (click)="deleteProjects(project._id)" id="delete">Borrar proyecto</button>
-    <button id="edit">Editar proyecto</button>
+    <button [routerLink]="['/editproject', project._id]" id="edit">Editar proyecto</button>
   </div>
 </section>

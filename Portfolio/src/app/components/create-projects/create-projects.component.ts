@@ -1,4 +1,4 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { Project } from "src/app/models/project";
 import { ProjectService } from 'src/app/services/project.service';
 import { UploadServices } from "../../services/upload.service";

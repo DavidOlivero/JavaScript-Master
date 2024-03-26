@@ -17,10 +17,6 @@ export class ProjectService {
     }
 
     public saveProject(project: Project): Observable<any> {
-      // let params: string = JSON.stringify(project)
-
-      console.log(project)
-
       return this._http.post(this.url + '/saveproject', project, {headers: this.headers})
     }
 
@@ -34,6 +30,10 @@ export class ProjectService {
 
     public deleteProject(id: any): Observable<any> {
       return this._http.delete(this.url + "/deleteprojects/" + id, {headers: this.headers})
+    }
+
+    public editProject(project: Project): Observable<any> {
+        return this._http.post(this.url + "/updateproject/" + project._id, project, {headers: this.headers})
     }
 }
 

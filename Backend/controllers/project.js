@@ -108,6 +108,8 @@ export const controller = {
         const projectId = req.params.id
         const elementUpdated = req.body
 
+        console.log("Sí mijo si está accediendo correctamente a este método, el error es interno")
+
         mongooseModel.findByIdAndUpdate(projectId, elementUpdated, { new: true }).exec()
             .then((project) => {
                 if (!project) {
